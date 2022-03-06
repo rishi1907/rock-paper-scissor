@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page Title</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <script>
+    // Your JavaScript goes here!
+  const hand = ["rock","paper","scissor"]
+
+
+  function computerPlay() {
+    let x = Math.random()*3 + 1;
+    while(x === 0) {
+      x = Math.random()*3 + 1;
+    }
+    let randomNum = Math.floor(x);
+    if(randomNum === 1) {
+      return "rock";
+    }
+    else if(randomNum === 2) {
+      return "paper";
+    }
+    else {
+      return "scissor";
+    }
+  }
+   
+  
+  function playRound(playerSelection, computerSelection) {
+     let player1 = playerSelection.toLowerCase()
+     let player2 = computerSelection
+
+     if(player1=="rock"){
+
+       switch(player2) {
+         case "rock":
+              console.log("its a tie!");
+              return "C";
+              break;
+         case "paper":
+               console.log("you lose, paper beats rock");
+               return "B";
+               break;
+         case "scissor":
+               console.log("you win, rock beats scissor");
+               return "A";
+               break;           
+        }
+     }  
+      else if(player1== "paper") {
+        switch(player2) {
+         case "rock":
+              console.log("you lose, paper beats rock");
+              return "B";
+              break;
+         case "paper":
+               console.log("its a tie!");
+               return "C";
+               break;
+         case "scissor":
+               console.log("you win, paper beats scissor");
+               return "A";
+               break;           
+        }
+      }   
+      else {
+        switch(player2) {
+         case "rock":
+              console.log("you lose, rock beats scissor");
+              return "B";
+              break;
+         case "paper":
+               console.log("you win, scissoe beats rock");
+               return "A";
+               break;
+         case "scissor":
+               console.log("its a tie");
+               return "C";
+               break;           
+        }
+      }   
+       
+     }
+
+
+   function game() {
+     let user;
+     let computer;
+     let result;
+     let score1 = 0;
+     let score2 = 0;
+     for(let j=0;j<5;j++) {
+      user = prompt("choose rock, paper or scissor: ")
+      computer = computerPlay()
+      result = playRound(user, computer)
+
+     if(result === "A") {
+       score1 = score1 + 1;
+       
+     }
+     else if(result === "B") {
+       score2 = score2 + 1;  
+     }
+     } 
+
+     if(score1 > score2) {
+       console.log("you won the game");
+     }
+     else if(score1 < score2) {
+       console.log("you lose the game");
+     }
+     else {
+       console.log("the game tied");
+     }
+     
+   } 
+
+   game();
+
+  </script>
+</body>
+</html>

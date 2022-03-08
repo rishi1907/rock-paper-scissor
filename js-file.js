@@ -95,9 +95,9 @@ function playRound(playerSelection, computerSelection) {
             break;
        case "paper":
              winner="";
-             winner = winner+"you win, scissoe beats rock";
+             winner = winner+"you win, scissor beats rock";
              winnerNode.textContent =winner;
-             console.log("you win, scissoe beats rock");
+             console.log("you win, scissor beats rock");
              return "A";
              break;
        case "scissor":
